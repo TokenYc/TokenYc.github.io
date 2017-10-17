@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="听说人的一生很短，所以还是多做些有趣的事吧。 听说人的一生很长，所以要把时间浪费在喜欢做的事和喜欢的人身上。 我们所过的每个平凡的日常，也许就是连续发生的奇迹。——-《日常》">
+<meta name="description" content="分类 Drawable Animation 帧动画,由一个一个的Drawable进行连续的播放。 View Animation 顾名思义，针对View使用。实现补间动画。仅限于简单的平移，缩放，旋转等动画。不改变View的实际属性 Property Animation 属性动画，可以用于所有的对象。不仅限于简单的动画，可以通过修改属性的值来实现各种动画。现在使用最多的动画。  Property A">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【非日常】纪念看得见却不存在的青春">
-<meta property="og:url" content="http://yoursite.com/2016/04/30/saybye/index.html">
+<meta property="og:title" content="Android动画的梳理">
+<meta property="og:url" content="http://yoursite.com/2017/10/17/android_animation/index.html">
 <meta property="og:site_name" content="Archer">
-<meta property="og:description" content="听说人的一生很短，所以还是多做些有趣的事吧。 听说人的一生很长，所以要把时间浪费在喜欢做的事和喜欢的人身上。 我们所过的每个平凡的日常，也许就是连续发生的奇迹。——-《日常》">
+<meta property="og:description" content="分类 Drawable Animation 帧动画,由一个一个的Drawable进行连续的播放。 View Animation 顾名思义，针对View使用。实现补间动画。仅限于简单的平移，缩放，旋转等动画。不改变View的实际属性 Property Animation 属性动画，可以用于所有的对象。不仅限于简单的动画，可以通过修改属性的值来实现各种动画。现在使用最多的动画。  Property A">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2016-04-29T16:52:32.000Z">
+<meta property="og:updated_time" content="2017-10-17T07:46:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【非日常】纪念看得见却不存在的青春">
-<meta name="twitter:description" content="听说人的一生很短，所以还是多做些有趣的事吧。 听说人的一生很长，所以要把时间浪费在喜欢做的事和喜欢的人身上。 我们所过的每个平凡的日常，也许就是连续发生的奇迹。——-《日常》">
+<meta name="twitter:title" content="Android动画的梳理">
+<meta name="twitter:description" content="分类 Drawable Animation 帧动画,由一个一个的Drawable进行连续的播放。 View Animation 顾名思义，针对View使用。实现补间动画。仅限于简单的平移，缩放，旋转等动画。不改变View的实际属性 Property Animation 属性动画，可以用于所有的对象。不仅限于简单的动画，可以通过修改属性的值来实现各种动画。现在使用最多的动画。  Property A">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/04/30/saybye/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/17/android_animation/"/>
 
 
 
 
 
-  <title> 【非日常】纪念看得见却不存在的青春 | Archer </title>
+  <title> Android动画的梳理 | Archer </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -250,7 +250,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/30/saybye/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/17/android_animation/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ArcherYc">
@@ -271,7 +271,7 @@
             
             
               
-                【非日常】纪念看得见却不存在的青春
+                Android动画的梳理
               
             
           </h1>
@@ -286,8 +286,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-30T00:52:32+08:00">
-                2016-04-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-17T15:46:50+08:00">
+                2017-10-17
               </time>
             
 
@@ -305,8 +305,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/04/30/saybye/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/30/saybye/" itemprop="commentCount"></span>
+                <a href="/2017/10/17/android_animation/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/10/17/android_animation/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -332,9 +332,22 @@
       
 
       
-        <p>听说人的一生很短，所以还是多做些有趣的事吧。</p>
-<p>听说人的一生很长，所以要把时间浪费在喜欢做的事和喜欢的人身上。</p>
-<p><strong>我们所过的每个平凡的日常，也许就是连续发生的奇迹。——-《日常》</strong></p>
+        <h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><ul>
+<li>Drawable Animation 帧动画,由一个一个的Drawable进行连续的播放。</li>
+<li>View Animation 顾名思义，针对View使用。实现补间动画。仅限于简单的平移，缩放，旋转等动画。不改变View的实际属性</li>
+<li>Property Animation 属性动画，可以用于所有的对象。不仅限于简单的动画，可以通过修改属性的值来实现各种动画。现在使用最多的动画。</li>
+</ul>
+<h3 id="Property-Animation"><a href="#Property-Animation" class="headerlink" title="Property Animation"></a>Property Animation</h3><h4 id="主要的两个类"><a href="#主要的两个类" class="headerlink" title="主要的两个类"></a>主要的两个类</h4><ul>
+<li><strong>ViewPropertyAnimator</strong> 如果只是View的简单的平移，旋转等变化，可直接使用这个类。可以直接调用View.animate().xxx</li>
+<li><strong>ObjectAnimator</strong> 适用于所有需要做动画的地方，相对于ViewPropertyAnimator较复杂。定制自由度高。可以作用于任何对象。</li>
+</ul>
+<h4 id="使用ObjectAnimator值得注意的点"><a href="#使用ObjectAnimator值得注意的点" class="headerlink" title="使用ObjectAnimator值得注意的点"></a>使用ObjectAnimator值得注意的点</h4><ul>
+<li>使用TypeEvaluator可以自定义变化属性的值随动画进度的变化。这个属性不仅可以是基础数据类型，也可以是对象。</li>
+<li>PropertyValuesHolder 可以帮助我们对多个属性进行管理。</li>
+<li>AnimatorSet 可以帮助我们管理多个动画。</li>
+<li>PropertyValuesHolders.ofKeyFrame方法可以自定义在动画播放关键帧处的值，把动画差分成多段。可以实现回弹等效果。</li>
+</ul>
+<h4 id="具体使用方法"><a href="#具体使用方法" class="headerlink" title="具体使用方法"></a>具体使用方法</h4><p><a href="https://zhuanlan.zhihu.com/p/29231600" target="_blank" rel="external">参考HenCoder的动画讲解</a><br><br><a href="http://blog.csdn.net/chziroy/article/details/40424343" target="_blank" rel="external">参考3种动画的讲解</a></p>
 
       
     </div>
@@ -365,8 +378,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/30/NDKJni/" rel="next" title="【非日常】AndroidStudio，opncv，ndk，jni,人脸识别示例程序">
-                <i class="fa fa-chevron-left"></i> 【非日常】AndroidStudio，opncv，ndk，jni,人脸识别示例程序
+              <a href="/2017/04/04/BigImage/" rel="next" title="【非日常】大图查看，兼容长图">
+                <i class="fa fa-chevron-left"></i> 【非日常】大图查看，兼容长图
               </a>
             
           </div>
@@ -374,10 +387,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/30/http/" rel="prev" title="【日常】网络请求总结">
-                【日常】网络请求总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -403,8 +412,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/30/saybye/"
-           data-title="【非日常】纪念看得见却不存在的青春" data-url="http://yoursite.com/2016/04/30/saybye/">
+      <div class="ds-thread" data-thread-key="2017/10/17/android_animation/"
+           data-title="Android动画的梳理" data-url="http://yoursite.com/2017/10/17/android_animation/">
       </div>
     
   </div>
@@ -428,8 +437,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://7xpp4m.com1.z0.glb.clouddn.com/20150722110848_zjBZ5.jpeg"
@@ -473,6 +491,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#分类"><span class="nav-number">1.</span> <span class="nav-text">分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Property-Animation"><span class="nav-number">2.</span> <span class="nav-text">Property Animation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#主要的两个类"><span class="nav-number">2.1.</span> <span class="nav-text">主要的两个类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用ObjectAnimator值得注意的点"><span class="nav-number">2.2.</span> <span class="nav-text">使用ObjectAnimator值得注意的点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#具体使用方法"><span class="nav-number">2.3.</span> <span class="nav-text">具体使用方法</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

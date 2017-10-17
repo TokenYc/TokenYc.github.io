@@ -248,7 +248,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/30/list/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/30/http/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ArcherYc">
@@ -270,8 +270,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/04/30/list/" itemprop="url">
-                  【日常】 列表页优化
+                <a class="post-title-link" href="/2016/04/30/http/" itemprop="url">
+                  【日常】网络请求总结
                 </a>
               
             
@@ -306,8 +306,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/04/30/list/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/30/list/" itemprop="commentCount"></span>
+                <a href="/2016/04/30/http/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/30/http/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -335,12 +335,24 @@
       
         
           
-          记录一下项目中列表页优化过程。页面布局
-第一个关注的是列表页中item的布局层数。布局的层数越多，视图树的深度就越大，会增加测量和布局的时间。具体优化的方法是：使用RelativeLayout代替LinearLayout布局，在使用include来引入布局的时候，一定的情况下可以使用merge标签来
+          看完一篇文章Android网络请求心路历程后总结一下
+http请求
+请求行：请求方式，url，协议版本
+请求头
+请求体
+
+http响应
+状态行：协议版本，状态码，状态码说明
+响应头
+响应体
+
+get请求和post请求的区别
+get的参数放在请求行中(get参数中文需要编码)
+post的参数经过编码后
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2016/04/30/list/#more" rel="contents">
+            <a class="btn" href="/2016/04/30/http/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -520,7 +532,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/30/diposit/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/30/NDKJni/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ArcherYc">
@@ -542,8 +554,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/04/30/diposit/" itemprop="url">
-                  【日常】沉淀
+                <a class="post-title-link" href="/2016/04/30/NDKJni/" itemprop="url">
+                  【非日常】AndroidStudio，opncv，ndk，jni,人脸识别示例程序
                 </a>
               
             
@@ -578,8 +590,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/04/30/diposit/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/30/diposit/" itemprop="commentCount"></span>
+                <a href="/2016/04/30/NDKJni/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/30/NDKJni/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -607,14 +619,14 @@
       
         
           
-          回头看看自己回常州半年了，回头看看自己，到底获得了什么，失去了什么，还剩下什么。
-
-收获 爱上了开源，学会了要多用别人造好的轮子。仔细想想，别的好像真没有什么了。说到底，还是自己天浮躁了。没有静下心来研究，很多东西一知半解。怪自己记性不好？并不是，只是缺少推敲。
-失去 渐渐失去了静下心来看书的耐心，
+          毕设要做人脸识别。在网上查了资料，决定使用AS+NDK+JNI+OpenCV完成。于是就在坑摸爬滚打了几天。今天总算把OpenCV里的人脸识别示例程序运行起来了。
+现在的情况是：熟悉android，c/c++以前学过基础，没有在项目中使用过，opencv没有碰过。
+几个概念
+NDK提供编译打包等工具
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2016/04/30/diposit/#more" rel="contents">
+            <a class="btn" href="/2016/04/30/NDKJni/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
