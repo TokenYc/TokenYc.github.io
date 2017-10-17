@@ -87,23 +87,17 @@
 
 
 
-<meta name="description" content="知乎上看到一个问题是，现在有什么有趣的api，赞最多的答案是自己去抓 =。=  那就抓一下吧 原理Fiddler使用本地127.0.0.1代理。可以设置代理的浏览器和应用都可以监测。 准备 安装Fiddler -。-废话 设置可以远程连接(为了抓app的包) 设置https(如果要抓取https的话)  安装官方下载地址： 下载地址 下一步——下一步——下一步——…….. 抓取浏览器请求进入后打开">
+<meta name="description" content="分类 Drawable Animation 帧动画,由一个一个的Drawable进行连续的播放。 View Animation 顾名思义，针对View使用。实现补间动画。仅限于简单的平移，缩放，旋转等动画。不改变View的实际属性 Property Animation 属性动画，可以用于所有的对象。不仅限于简单的动画，可以通过修改属性的值来实现各种动画。现在使用最多的动画。  Property A">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【日常】使用Fiddler抓包">
-<meta property="og:url" content="http://yoursite.com/2016/04/30/Fiddler/index.html">
+<meta property="og:title" content="Android动画的梳理">
+<meta property="og:url" content="http://yoursite.com/2017/04/04/animation/index.html">
 <meta property="og:site_name" content="Archer">
-<meta property="og:description" content="知乎上看到一个问题是，现在有什么有趣的api，赞最多的答案是自己去抓 =。=  那就抓一下吧 原理Fiddler使用本地127.0.0.1代理。可以设置代理的浏览器和应用都可以监测。 准备 安装Fiddler -。-废话 设置可以远程连接(为了抓app的包) 设置https(如果要抓取https的话)  安装官方下载地址： 下载地址 下一步——下一步——下一步——…….. 抓取浏览器请求进入后打开">
+<meta property="og:description" content="分类 Drawable Animation 帧动画,由一个一个的Drawable进行连续的播放。 View Animation 顾名思义，针对View使用。实现补间动画。仅限于简单的平移，缩放，旋转等动画。不改变View的实际属性 Property Animation 属性动画，可以用于所有的对象。不仅限于简单的动画，可以通过修改属性的值来实现各种动画。现在使用最多的动画。  Property A">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://7xpp4m.com1.z0.glb.clouddn.com/blogfiddler1.png">
-<meta property="og:image" content="http://7xpp4m.com1.z0.glb.clouddn.com/blogfiddler2.png">
-<meta property="og:image" content="http://7xpp4m.com1.z0.glb.clouddn.com/blogfiddler4.png">
-<meta property="og:image" content="http://7xpp4m.com1.z0.glb.clouddn.com/blogfiddler3.png">
-<meta property="og:image" content="http://7xpp4m.com1.z0.glb.clouddn.com/blogfiddler5.png">
-<meta property="og:updated_time" content="2016-04-29T16:52:32.000Z">
+<meta property="og:updated_time" content="2017-10-17T07:42:34.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【日常】使用Fiddler抓包">
-<meta name="twitter:description" content="知乎上看到一个问题是，现在有什么有趣的api，赞最多的答案是自己去抓 =。=  那就抓一下吧 原理Fiddler使用本地127.0.0.1代理。可以设置代理的浏览器和应用都可以监测。 准备 安装Fiddler -。-废话 设置可以远程连接(为了抓app的包) 设置https(如果要抓取https的话)  安装官方下载地址： 下载地址 下一步——下一步——下一步——…….. 抓取浏览器请求进入后打开">
-<meta name="twitter:image" content="http://7xpp4m.com1.z0.glb.clouddn.com/blogfiddler1.png">
+<meta name="twitter:title" content="Android动画的梳理">
+<meta name="twitter:description" content="分类 Drawable Animation 帧动画,由一个一个的Drawable进行连续的播放。 View Animation 顾名思义，针对View使用。实现补间动画。仅限于简单的平移，缩放，旋转等动画。不改变View的实际属性 Property Animation 属性动画，可以用于所有的对象。不仅限于简单的动画，可以通过修改属性的值来实现各种动画。现在使用最多的动画。  Property A">
 
 
 
@@ -131,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/04/30/Fiddler/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/04/animation/"/>
 
 
 
 
 
-  <title> 【日常】使用Fiddler抓包 | Archer </title>
+  <title> Android动画的梳理 | Archer </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -256,7 +250,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/30/Fiddler/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/04/animation/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ArcherYc">
@@ -277,7 +271,7 @@
             
             
               
-                【日常】使用Fiddler抓包
+                Android动画的梳理
               
             
           </h1>
@@ -292,8 +286,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-30T00:52:32+08:00">
-                2016-04-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-04T20:51:22+08:00">
+                2017-04-04
               </time>
             
 
@@ -311,8 +305,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/04/30/Fiddler/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/30/Fiddler/" itemprop="commentCount"></span>
+                <a href="/2017/04/04/animation/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/04/animation/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -338,24 +332,22 @@
       
 
       
-        <p>知乎上看到一个问题是，现在有什么有趣的api，赞最多的答案是自己去抓 =。=  那就抓一下吧</p>
-<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>Fiddler使用本地127.0.0.1代理。可以设置代理的浏览器和应用都可以监测。</p>
-<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><ul>
-<li>安装Fiddler -。-废话</li>
-<li>设置可以远程连接(为了抓app的包)</li>
-<li>设置https(如果要抓取https的话)</li>
+        <h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><ul>
+<li>Drawable Animation 帧动画,由一个一个的Drawable进行连续的播放。</li>
+<li>View Animation 顾名思义，针对View使用。实现补间动画。仅限于简单的平移，缩放，旋转等动画。不改变View的实际属性</li>
+<li>Property Animation 属性动画，可以用于所有的对象。不仅限于简单的动画，可以通过修改属性的值来实现各种动画。现在使用最多的动画。</li>
 </ul>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>官方下载地址： <a href="http://www.telerik.com/fiddler" target="_blank" rel="external">下载地址</a></p>
-<p>下一步——下一步——下一步——……..</p>
-<h3 id="抓取浏览器请求"><a href="#抓取浏览器请求" class="headerlink" title="抓取浏览器请求"></a>抓取浏览器请求</h3><p>进入后打开某个网页。<br><img src="http://7xpp4m.com1.z0.glb.clouddn.com/blogfiddler1.png" alt="进入程序就可以了"></p>
-<h3 id="设置远程连接"><a href="#设置远程连接" class="headerlink" title="设置远程连接"></a>设置远程连接</h3><p>目的是让手机可以使用fiddler的127.0.0.1：8888代理。手机和电脑必须在同一网络下才行。<br>最上面一栏 Tools–&gt;Fiddler options</p>
-<p><img src="http://7xpp4m.com1.z0.glb.clouddn.com/blogfiddler2.png" alt=""></p>
-<p>手机上要设置wifi代理</p>
-<p><img src="http://7xpp4m.com1.z0.glb.clouddn.com/blogfiddler4.png" alt=""></p>
-<p>设置好后进入某一app就会抓取到请求了</p>
-<h3 id="设置https"><a href="#设置https" class="headerlink" title="设置https"></a>设置https</h3><p><img src="http://7xpp4m.com1.z0.glb.clouddn.com/blogfiddler3.png" alt=""></p>
-<p>手机上用浏览器访问: 主机名+端口  下载证书</p>
-<p><img src="http://7xpp4m.com1.z0.glb.clouddn.com/blogfiddler5.png" alt=""></p>
+<h3 id="Property-Animation"><a href="#Property-Animation" class="headerlink" title="Property Animation"></a>Property Animation</h3><h4 id="主要的两个类"><a href="#主要的两个类" class="headerlink" title="主要的两个类"></a>主要的两个类</h4><ul>
+<li><strong>ViewPropertyAnimator</strong> 如果只是View的简单的平移，旋转等变化，可直接使用这个类。可以直接调用View.animate().xxx</li>
+<li><strong>ObjectAnimator</strong> 适用于所有需要做动画的地方，相对于ViewPropertyAnimator较复杂。定制自由度高。可以作用于任何对象。</li>
+</ul>
+<h4 id="使用ObjectAnimator值得注意的点"><a href="#使用ObjectAnimator值得注意的点" class="headerlink" title="使用ObjectAnimator值得注意的点"></a>使用ObjectAnimator值得注意的点</h4><ul>
+<li>使用TypeEvaluator可以自定义变化属性的值随动画进度的变化。这个属性不仅可以是基础数据类型，也可以是对象。</li>
+<li>PropertyValuesHolder 可以帮助我们对多个属性进行管理。</li>
+<li>AnimatorSet 可以帮助我们管理多个动画。</li>
+<li>PropertyValuesHolders.ofKeyFrame方法可以自定义在动画播放关键帧处的值，把动画差分成多段。可以实现回弹等效果。</li>
+</ul>
+<h4 id="具体使用方法"><a href="#具体使用方法" class="headerlink" title="具体使用方法"></a>具体使用方法</h4><p><a href="https://zhuanlan.zhihu.com/p/29231600" target="_blank" rel="external">参考HenCoder的动画讲解</a><br><br><a href="http://blog.csdn.net/chziroy/article/details/40424343" target="_blank" rel="external">参考3种动画的讲解</a></p>
 
       
     </div>
@@ -386,8 +378,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/30/DestoryFile/" rel="next" title="【黑科技】让qq，微信无法读取图片和文件">
-                <i class="fa fa-chevron-left"></i> 【黑科技】让qq，微信无法读取图片和文件
+              <a href="/2017/03/12/3_12_note/" rel="next" title="【日常】讲道理">
+                <i class="fa fa-chevron-left"></i> 【日常】讲道理
               </a>
             
           </div>
@@ -396,8 +388,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/30/EventBus/" rel="prev" title="研究下EventBus">
-                研究下EventBus <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/04/MotionEvent/" rel="prev" title="【非日常】Android事件体系">
+                【非日常】Android事件体系 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -424,8 +416,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/30/Fiddler/"
-           data-title="【日常】使用Fiddler抓包" data-url="http://yoursite.com/2016/04/30/Fiddler/">
+      <div class="ds-thread" data-thread-key="2017/04/04/animation/"
+           data-title="Android动画的梳理" data-url="http://yoursite.com/2017/04/04/animation/">
       </div>
     
   </div>
@@ -513,7 +505,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#原理"><span class="nav-number">1.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#准备"><span class="nav-number">2.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">3.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#抓取浏览器请求"><span class="nav-number">4.</span> <span class="nav-text">抓取浏览器请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置远程连接"><span class="nav-number">5.</span> <span class="nav-text">设置远程连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置https"><span class="nav-number">6.</span> <span class="nav-text">设置https</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#分类"><span class="nav-number">1.</span> <span class="nav-text">分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Property-Animation"><span class="nav-number">2.</span> <span class="nav-text">Property Animation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#主要的两个类"><span class="nav-number">2.1.</span> <span class="nav-text">主要的两个类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用ObjectAnimator值得注意的点"><span class="nav-number">2.2.</span> <span class="nav-text">使用ObjectAnimator值得注意的点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#具体使用方法"><span class="nav-number">2.3.</span> <span class="nav-text">具体使用方法</span></a></li></ol></li></ol></div>
             
 
           </div>
