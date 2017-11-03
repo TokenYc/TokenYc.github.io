@@ -1072,6 +1072,145 @@ view(区别于viewGroup)中的touch事
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/30/Fiddler/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ArcherYc">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://7xpp4m.com1.z0.glb.clouddn.com/20150722110848_zjBZ5.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Archer">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/30/Fiddler/" itemprop="url">
+                  使用Fiddler抓包
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-30T00:52:32+08:00">
+                2016-04-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/04/30/Fiddler/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/30/Fiddler/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          知乎上看到一个问题是，现在有什么有趣的api，赞最多的答案是自己去抓 =。=  那就抓一下吧
+原理Fiddler使用本地127.0.0.1代理。可以设置代理的浏览器和应用都可以监测。
+准备
+安装Fiddler -。-废话
+设置可以远程连接(为了抓app的包)
+设置https(如果要抓取https的话
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/04/30/Fiddler/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/30/DestoryFile/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1348,7 +1487,7 @@ EventBus实现原理，结合源码解析。
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/30/Fiddler/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/30/list/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ArcherYc">
@@ -1370,8 +1509,8 @@ EventBus实现原理，结合源码解析。
             
               
                 
-                <a class="post-title-link" href="/2016/04/30/Fiddler/" itemprop="url">
-                  使用Fiddler抓包
+                <a class="post-title-link" href="/2016/04/30/list/" itemprop="url">
+                  列表页优化
                 </a>
               
             
@@ -1406,8 +1545,8 @@ EventBus实现原理，结合源码解析。
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/04/30/Fiddler/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/30/Fiddler/" itemprop="commentCount"></span>
+                <a href="/2016/04/30/list/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/30/list/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1435,163 +1574,12 @@ EventBus实现原理，结合源码解析。
       
         
           
-          知乎上看到一个问题是，现在有什么有趣的api，赞最多的答案是自己去抓 =。=  那就抓一下吧
-原理Fiddler使用本地127.0.0.1代理。可以设置代理的浏览器和应用都可以监测。
-准备
-安装Fiddler -。-废话
-设置可以远程连接(为了抓app的包)
-设置https(如果要抓取https的话
+          记录一下项目中列表页优化过程。页面布局
+第一个关注的是列表页中item的布局层数。布局的层数越多，视图树的深度就越大，会增加测量和布局的时间。具体优化的方法是：使用RelativeLayout代替LinearLayout布局，在使用include来引入布局的时候，一定的情况下可以使用merge标签来
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2016/04/30/Fiddler/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/30/http/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ArcherYc">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://7xpp4m.com1.z0.glb.clouddn.com/20150722110848_zjBZ5.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Archer">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/30/http/" itemprop="url">
-                  网络请求总结
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-30T00:52:32+08:00">
-                2016-04-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/04/30/http/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/30/http/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          看完一篇文章Android网络请求心路历程后总结一下
-http请求
-请求行：请求方式，url，协议版本
-请求头
-请求体
-
-http响应
-状态行：协议版本，状态码，状态码说明
-响应头
-响应体
-
-get请求和post请求的区别
-get的参数放在请求行中(get参数中文需要编码)
-post的参数经过编码后
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/04/30/http/#more" rel="contents">
+            <a class="btn" href="/2016/04/30/list/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
