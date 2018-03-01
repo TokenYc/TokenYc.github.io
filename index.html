@@ -935,7 +935,7 @@ view(区别于viewGroup)中的touch事
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/30/DestoryFile/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/30/Fiddler/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ArcherYc">
@@ -957,8 +957,8 @@ view(区别于viewGroup)中的touch事
             
               
                 
-                <a class="post-title-link" href="/2016/04/30/DestoryFile/" itemprop="url">
-                  让qq，微信无法读取图片和文件
+                <a class="post-title-link" href="/2016/04/30/Fiddler/" itemprop="url">
+                  使用Fiddler抓包
                 </a>
               
             
@@ -993,8 +993,8 @@ view(区别于viewGroup)中的touch事
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/04/30/DestoryFile/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/30/DestoryFile/" itemprop="commentCount"></span>
+                <a href="/2016/04/30/Fiddler/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/30/Fiddler/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1022,13 +1022,16 @@ view(区别于viewGroup)中的touch事
       
         
           
-          
-事件的经过在开发程序的时候碰到一个问题：无法在自己手机的SD卡中创建应用的文件夹。别的测试机就可以。而且改个名字就可以创建了。看了半天没找到原因，后来终于发现在SD卡下有个和应用同名的文件，注意，是文件，不是文件夹。我把它删了，果然就可以创建同名的文件夹了。
-结论如果目录中存在同名的文件，则同名的
+          知乎上看到一个问题是，现在有什么有趣的api，赞最多的答案是自己去抓 =。=  那就抓一下吧
+原理Fiddler使用本地127.0.0.1代理。可以设置代理的浏览器和应用都可以监测。
+准备
+安装Fiddler -。-废话
+设置可以远程连接(为了抓app的包)
+设置https(如果要抓取https的话
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2016/04/30/DestoryFile/#more" rel="contents">
+            <a class="btn" href="/2016/04/30/Fiddler/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1482,7 +1485,7 @@ NDK提供编译打包等工具
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/30/Fiddler/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/30/http/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ArcherYc">
@@ -1504,8 +1507,8 @@ NDK提供编译打包等工具
             
               
                 
-                <a class="post-title-link" href="/2016/04/30/Fiddler/" itemprop="url">
-                  使用Fiddler抓包
+                <a class="post-title-link" href="/2016/04/30/http/" itemprop="url">
+                  网络请求总结
                 </a>
               
             
@@ -1540,8 +1543,8 @@ NDK提供编译打包等工具
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/04/30/Fiddler/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/30/Fiddler/" itemprop="commentCount"></span>
+                <a href="/2016/04/30/http/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/30/http/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1569,16 +1572,24 @@ NDK提供编译打包等工具
       
         
           
-          知乎上看到一个问题是，现在有什么有趣的api，赞最多的答案是自己去抓 =。=  那就抓一下吧
-原理Fiddler使用本地127.0.0.1代理。可以设置代理的浏览器和应用都可以监测。
-准备
-安装Fiddler -。-废话
-设置可以远程连接(为了抓app的包)
-设置https(如果要抓取https的话
+          看完一篇文章Android网络请求心路历程后总结一下
+http请求
+请求行：请求方式，url，协议版本
+请求头
+请求体
+
+http响应
+状态行：协议版本，状态码，状态码说明
+响应头
+响应体
+
+get请求和post请求的区别
+get的参数放在请求行中(get参数中文需要编码)
+post的参数经过编码后
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2016/04/30/Fiddler/#more" rel="contents">
+            <a class="btn" href="/2016/04/30/http/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
