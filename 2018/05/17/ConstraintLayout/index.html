@@ -1,0 +1,768 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="官方定义A ConstraintLayout is a ViewGroup which allows you to position and size widgets in a flexible way   实现两个View之间的圆关系。有3个可以设置的参数：圆心，半径，角度。  1234567891011121314151617181920&amp;lt;TextView        android:">
+<meta name="keywords" content="Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ConstraintLayout 更灵活的布局">
+<meta property="og:url" content="http://yoursite.com/2018/05/17/ConstraintLayout/index.html">
+<meta property="og:site_name" content="Archer">
+<meta property="og:description" content="官方定义A ConstraintLayout is a ViewGroup which allows you to position and size widgets in a flexible way   实现两个View之间的圆关系。有3个可以设置的参数：圆心，半径，角度。  1234567891011121314151617181920&amp;lt;TextView        android:">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://7xpp4m.com1.z0.glb.clouddn.com/%E5%9C%86%E5%BD%A2.png">
+<meta property="og:image" content="http://7xpp4m.com1.z0.glb.clouddn.com/%E4%B8%8D%E5%BC%BA%E5%88%B6%E7%BA%A6%E6%9D%9F.png">
+<meta property="og:image" content="http://7xpp4m.com1.z0.glb.clouddn.com/%E5%BC%BA%E5%88%B6%E7%BA%A6%E6%9D%9F.png">
+<meta property="og:image" content="http://img-blog.csdn.net/20180507145056717?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTI1NTEzNTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="http://7xpp4m.com1.z0.glb.clouddn.com/%E6%AF%94%E4%BE%8B.png">
+<meta property="og:image" content="http://7xpp4m.com1.z0.glb.clouddn.com/%E5%AE%BD%E9%AB%98%E6%AF%94%E4%B8%8E%E5%8D%A0%E6%AF%94.png">
+<meta property="og:image" content="http://7xpp4m.com1.z0.glb.clouddn.com/guideline.png">
+<meta property="og:image" content="http://7xpp4m.com1.z0.glb.clouddn.com/Barrier.png">
+<meta property="og:image" content="http://7xpp4m.com1.z0.glb.clouddn.com/PlaceHolder.png">
+<meta property="og:image" content="http://7xpp4m.com1.z0.glb.clouddn.com/old.png">
+<meta property="og:image" content="http://7xpp4m.com1.z0.glb.clouddn.com/new.png">
+<meta property="og:updated_time" content="2018-05-17T06:30:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ConstraintLayout 更灵活的布局">
+<meta name="twitter:description" content="官方定义A ConstraintLayout is a ViewGroup which allows you to position and size widgets in a flexible way   实现两个View之间的圆关系。有3个可以设置的参数：圆心，半径，角度。  1234567891011121314151617181920&amp;lt;TextView        android:">
+<meta name="twitter:image" content="http://7xpp4m.com1.z0.glb.clouddn.com/%E5%9C%86%E5%BD%A2.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/17/ConstraintLayout/"/>
+
+
+
+
+
+  <title> ConstraintLayout 更灵活的布局 | Archer </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Archer</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/17/ConstraintLayout/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ArcherYc">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://7xpp4m.com1.z0.glb.clouddn.com/20150722110848_zjBZ5.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Archer">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                ConstraintLayout 更灵活的布局
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-17T14:30:23+08:00">
+                2018-05-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/17/ConstraintLayout/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/05/17/ConstraintLayout/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="官方定义"><a href="#官方定义" class="headerlink" title="官方定义"></a>官方定义</h4><p>A ConstraintLayout is a ViewGroup which allows you to position and size widgets in a flexible way</p>
+<hr>
+<ul>
+<li>实现两个View之间的圆关系。有3个可以设置的参数：圆心，半径，角度。</li>
+</ul>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;TextView</div><div class="line">        android:<span class="attribute">id</span>=<span class="string">"@+id/tv_0"</span></div><div class="line">        android:<span class="attribute">layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">        android:<span class="attribute">layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">        android:<span class="attribute">text</span>=<span class="string">"TextView 0"</span></div><div class="line">        android:<span class="attribute">background</span>=<span class="string">"#86b5ce"</span></div><div class="line">        app:<span class="attribute">layout_constraintBottom_toBottomOf</span>=<span class="string">"parent"</span></div><div class="line">        app:<span class="attribute">layout_constraintLeft_toLeftOf</span>=<span class="string">"parent"</span></div><div class="line">        app:<span class="attribute">layout_constraintRight_toRightOf</span>=<span class="string">"parent"</span></div><div class="line">        app:<span class="attribute">layout_constraintTop_toTopOf</span>=<span class="string">"parent"</span> /&gt;</div><div class="line"></div><div class="line">    &lt;TextView</div><div class="line">        android:<span class="attribute">layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">        android:<span class="attribute">layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">        android:<span class="attribute">text</span>=<span class="string">"TextView 1"</span></div><div class="line">        android:<span class="attribute">background</span>=<span class="string">"#479782"</span></div><div class="line">        app:<span class="attribute">layout_constraintCircle</span>=<span class="string">"@id/tv_0"</span></div><div class="line">        app:<span class="attribute">layout_constraintCircleRadius</span>=<span class="string">"100dp"</span></div><div class="line">        app:<span class="attribute">layout_constraintCircleAngle</span>=<span class="string">"45"</span></div><div class="line">        /&gt;</div></pre></td></tr></table></figure>
+<p><img src="http://7xpp4m.com1.z0.glb.clouddn.com/%E5%9C%86%E5%BD%A2.png" width="50%"></p>
+<ul>
+<li>强制布局的约束性</li>
+</ul>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">app:</span>layout_constrainedWidth=<span class="string">"true"</span></div><div class="line"><span class="symbol">app:</span>layout_constrainedHeigth=<span class="string">"true"</span></div></pre></td></tr></table></figure>
+<p>不强制约束<br><img src="http://7xpp4m.com1.z0.glb.clouddn.com/%E4%B8%8D%E5%BC%BA%E5%88%B6%E7%BA%A6%E6%9D%9F.png" width="50%"></p>
+<p>强制约束<br><img src="http://7xpp4m.com1.z0.glb.clouddn.com/%E5%BC%BA%E5%88%B6%E7%BA%A6%E6%9D%9F.png" width="50%"></p>
+<ul>
+<li><strong>Chain</strong> 链</li>
+</ul>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//在某个头结点设置属性</span></div><div class="line"><span class="symbol">app:</span>layout_constraintHorizontal_chainStyle=<span class="string">"spread"</span></div></pre></td></tr></table></figure>
+<p> <img src="http://img-blog.csdn.net/20180507145056717?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTI1NTEzNTA=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" width="70%"></p>
+<ul>
+<li>填充父布局约束</li>
+</ul>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">//以宽为例，宽设置为0dp，会填充整个父布局可用宽度。</span></div><div class="line"><span class="symbol">android:</span>layout_width=<span class="string">"0dp"</span></div><div class="line"><span class="symbol">app:</span>layout_constraintWidth_percent=<span class="string">"0.5"</span></div><div class="line"><span class="comment">//或者</span></div><div class="line"><span class="symbol">app:</span>layout_constraintWidth_min=<span class="string">"100dp"</span></div><div class="line"><span class="symbol">app:</span>layout_constraintWidth_max=<span class="string">"200dp"</span></div></pre></td></tr></table></figure>
+<ul>
+<li>GoneMargin</li>
+</ul>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//当控件的左边的约束不可见的时候，可以设置一个Margin来应对。</span></div><div class="line"><span class="symbol">app:</span>layout_goneMarginLeft=<span class="string">"100dp"</span></div></pre></td></tr></table></figure>
+<ul>
+<li>设置控件宽高比</li>
+</ul>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//宽度和高度中需要有一个设置为0dp，然后设置Ratio，形式为 若高为0dp，则 H,比例:比例</span></div><div class="line">&lt;ImageView</div><div class="line">        android:layout_width=<span class="string">"100dp"</span></div><div class="line">        android:layout_height=<span class="string">"0dp"</span></div><div class="line">        android:scaleType=<span class="string">"centerCrop"</span></div><div class="line">        android:src=<span class="string">"@mipmap/ic_launcher"</span></div><div class="line">        <span class="keyword">app</span>:layout_constraintDimensionRatio=<span class="string">"H,16:9"</span> /&gt;</div></pre></td></tr></table></figure>
+<p><img src="http://7xpp4m.com1.z0.glb.clouddn.com/%E6%AF%94%E4%BE%8B.png"></p>
+<ul>
+<li>设置控件宽高比并且设置宽占父控件的比例。</li>
+</ul>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//这种情况下默认是居中的。可以通过设置layout_constraintDimensionRatio来居左或者居右</span></div><div class="line">&lt;ImageView</div><div class="line">        android:layout_width=<span class="string">"0dp"</span></div><div class="line">        android:layout_height=<span class="string">"0dp"</span></div><div class="line">        android:scaleType=<span class="string">"centerCrop"</span></div><div class="line">        android:src=<span class="string">"@mipmap/ic_launcher"</span></div><div class="line">        <span class="keyword">app</span>:layout_constraintHorizontal_bias=<span class="string">"0"</span></div><div class="line">        <span class="keyword">app</span>:layout_constraintWidth_percent=<span class="string">"0.5"</span></div><div class="line">        <span class="keyword">app</span>:layout_constraintLeft_toLeftOf=<span class="string">"parent"</span></div><div class="line">        <span class="keyword">app</span>:layout_constraintRight_toRightOf=<span class="string">"parent"</span></div><div class="line">        <span class="keyword">app</span>:layout_constraintDimensionRatio=<span class="string">"H,16:9"</span> /&gt;</div></pre></td></tr></table></figure>
+<p><img src="http://7xpp4m.com1.z0.glb.clouddn.com/%E5%AE%BD%E9%AB%98%E6%AF%94%E4%B8%8E%E5%8D%A0%E6%AF%94.png" width="50%"></p>
+<p><br></p>
+<ul>
+<li><strong>Guideline</strong> 不占空间，辅助线。可以设置在某个方向上固定高度的位置，或者固定比例的位置。</li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//使用Guideline来实现margin的比例控制</span></div><div class="line"> &lt;android<span class="selector-class">.support</span><span class="selector-class">.constraint</span><span class="selector-class">.Guideline</span></div><div class="line">        android:id=<span class="string">"@+id/guideline"</span></div><div class="line">        android:layout_width=<span class="string">"wrap_content"</span></div><div class="line">        android:layout_height=<span class="string">"wrap_content"</span></div><div class="line">        android:orientation=<span class="string">"horizontal"</span></div><div class="line">        app:layout_constraintGuide_percent=<span class="string">"0.2"</span> /&gt;</div><div class="line"></div><div class="line">    &lt;android<span class="selector-class">.support</span><span class="selector-class">.constraint</span><span class="selector-class">.Guideline</span></div><div class="line">        android:id=<span class="string">"@+id/guideline2"</span></div><div class="line">        android:layout_width=<span class="string">"wrap_content"</span></div><div class="line">        android:layout_height=<span class="string">"wrap_content"</span></div><div class="line">        android:orientation=<span class="string">"vertical"</span></div><div class="line">        app:layout_constraintGuide_percent=<span class="string">"0.2"</span> /&gt;</div><div class="line"></div><div class="line">    &lt;ImageView</div><div class="line">        android:layout_width=<span class="string">"100dp"</span></div><div class="line">        android:layout_height=<span class="string">"0dp"</span></div><div class="line">        android:scaleType=<span class="string">"centerCrop"</span></div><div class="line">        android:src=<span class="string">"@mipmap/ic_launcher"</span></div><div class="line">        app:layout_constraintDimensionRatio=<span class="string">"H,16:9"</span></div><div class="line">        app:layout_constraintLeft_toRightOf=<span class="string">"@id/guideline2"</span></div><div class="line">        app:layout_constraintTop_toBottomOf=<span class="string">"@id/guideline"</span> /&gt;</div></pre></td></tr></table></figure>
+<p><img src="http://7xpp4m.com1.z0.glb.clouddn.com/guideline.png" width="30%"></p>
+<ul>
+<li><strong>Barrier</strong>在多个并列的控件边缘设置一个”阻碍“，始终在最边缘的控件边上,以应对并列控件最边缘控件产生变化的情况。</li>
+</ul>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">&lt;TextView</div><div class="line">       android:<span class="attribute">id</span>=<span class="string">"@+id/tv_0"</span></div><div class="line">       android:<span class="attribute">layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">       android:<span class="attribute">layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">       android:<span class="attribute">background</span>=<span class="string">"#86b5ce"</span></div><div class="line">       android:<span class="attribute">text</span>=<span class="string">"TextView 0"</span></div><div class="line">       android:<span class="attribute">visibility</span>=<span class="string">"visible"</span></div><div class="line">       app:<span class="attribute">layout_goneMarginLeft</span>=<span class="string">"100dp"</span> /&gt;</div><div class="line"></div><div class="line">   &lt;TextView</div><div class="line">       android:<span class="attribute">layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">       android:<span class="attribute">layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">       android:<span class="attribute">background</span>=<span class="string">"#479782"</span></div><div class="line">       android:<span class="attribute">text</span>=<span class="string">"TextView 11111111111111111111111"</span></div><div class="line">       android:<span class="attribute">visibility</span>=<span class="string">"visible"</span></div><div class="line">       app:<span class="attribute">layout_constraintLeft_toRightOf</span>=<span class="string">"@id/barrier"</span></div><div class="line">        /&gt;</div><div class="line"></div><div class="line">   &lt;ImageView</div><div class="line">       android:<span class="attribute">id</span>=<span class="string">"@+id/imageView"</span></div><div class="line">       android:<span class="attribute">layout_width</span>=<span class="string">"100dp"</span></div><div class="line">       android:<span class="attribute">layout_height</span>=<span class="string">"0dp"</span></div><div class="line">       android:<span class="attribute">scaleType</span>=<span class="string">"centerCrop"</span></div><div class="line">       android:<span class="attribute">src</span>=<span class="string">"@mipmap/ic_launcher"</span></div><div class="line">       app:<span class="attribute">layout_constraintTop_toBottomOf</span>=<span class="string">"@id/tv_0"</span></div><div class="line">       app:<span class="attribute">layout_constraintDimensionRatio</span>=<span class="string">"H,16:9"</span> /&gt;</div><div class="line"></div><div class="line">   &lt;android.support.constraint.Barrier</div><div class="line">       android:<span class="attribute">id</span>=<span class="string">"@+id/barrier"</span></div><div class="line">       android:<span class="attribute">layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">       android:<span class="attribute">layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">       app:<span class="attribute">barrierDirection</span>=<span class="string">"right"</span></div><div class="line">       app:<span class="attribute">constraint_referenced_ids</span>=<span class="string">"tv_0,imageView"</span> /&gt;</div></pre></td></tr></table></figure>
+<p><img src="http://7xpp4m.com1.z0.glb.clouddn.com/Barrier.png" width="50%"></p>
+<ul>
+<li><strong>Group</strong> 1.1新增 控制一组控件的可见性。可以让代码更整洁。</li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;android<span class="selector-class">.support</span><span class="selector-class">.constraint</span><span class="selector-class">.Group</span></div><div class="line">        android:layout_width=<span class="string">"wrap_content"</span></div><div class="line">        android:layout_height=<span class="string">"wrap_content"</span></div><div class="line">        app:constraint_referenced_ids=<span class="string">"tv_0,imageView"</span></div><div class="line">        android:<span class="attribute">visibility</span>=<span class="string">"gone"</span></div><div class="line">        /&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li><strong>PlaceHolder</strong> 1.1新增 先在布局添加一个PlaceHolder，后续通过setContentId设置View，然后View就会用PlaceHolder的参数来布局了。</li>
+</ul>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;android.support.constraint.Placeholder</div><div class="line">       android:<span class="attribute">id</span>=<span class="string">"@+id/placeHolder"</span></div><div class="line">       android:<span class="attribute">layout_width</span>=<span class="string">"100dp"</span></div><div class="line">       android:<span class="attribute">layout_height</span>=<span class="string">"100dp"</span></div><div class="line">       app:<span class="attribute">layout_constraintBottom_toBottomOf</span>=<span class="string">"parent"</span></div><div class="line">       /&gt;</div></pre></td></tr></table></figure>
+<p><img src="http://7xpp4m.com1.z0.glb.clouddn.com/PlaceHolder.png" width="30%"></p>
+<ul>
+<li><strong>ConstraintSet</strong> 是约束规则的合集，可以设置到一个ConstrainLayout上替换其原本的约束。</li>
+</ul>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">    setContentView(R.layout.activity_main);</div><div class="line">    ConstraintLayout constraintLayout = findViewById(R.id.ct_root);</div><div class="line">    ConstraintSet constraintSet = <span class="keyword">new</span> ConstraintSet();</div><div class="line">    constraintSet.clone(<span class="keyword">this</span>, R.layout.temp);</div><div class="line">    constraintSet.applyTo(constraintLayout);</div><div class="line">    </div><div class="line"><span class="comment">//activity_main.xml</span></div><div class="line">&lt;TextView</div><div class="line">    android:id=<span class="string">"@+id/tv_0"</span></div><div class="line">    android:layout_width=<span class="string">"wrap_content"</span></div><div class="line">    android:layout_height=<span class="string">"wrap_content"</span></div><div class="line">    android:<span class="built_in">background</span>=<span class="string">"#86b5ce"</span></div><div class="line">    android:<span class="built_in">text</span>=<span class="string">"TextView 0"</span></div><div class="line">    android:visibility=<span class="string">"visible"</span></div><div class="line">    app:layout_goneMarginLeft=<span class="string">"100dp"</span> /&gt;</div><div class="line"></div><div class="line"><span class="comment">//tem.xml</span></div><div class="line">&lt;TextView</div><div class="line">    android:id=<span class="string">"@+id/tv_0"</span></div><div class="line">    android:layout_width=<span class="string">"wrap_content"</span></div><div class="line">    android:layout_height=<span class="string">"wrap_content"</span></div><div class="line">    android:<span class="built_in">text</span>=<span class="string">"TextView 0"</span></div><div class="line">    app:layout_constraintLeft_toLeftOf=<span class="string">"parent"</span></div><div class="line">    app:layout_constraintRight_toRightOf=<span class="string">"parent"</span></div><div class="line">    app:layout_constraintTop_toTopOf=<span class="string">"parent"</span></div><div class="line">    app:layout_constraintBottom_toBottomOf=<span class="string">"parent"</span></div><div class="line">    /&gt;</div></pre></td></tr></table></figure>
+<p>左图为老布局，右图为新布局<br><br><img src="http://7xpp4m.com1.z0.glb.clouddn.com/old.png" width="30%"><br><img src="http://7xpp4m.com1.z0.glb.clouddn.com/new.png" width="30%"></p>
+<h4 id="使用建议"><a href="#使用建议" class="headerlink" title="使用建议"></a>使用建议</h4><ul>
+<li>可以用少量层数的LinearLayout和RelativeLayout完成的布局，不使用ConstraintLayout，因为布局嵌套层数少时，使用ConstraintLayout更消耗性能。</li>
+<li>当需要实现特殊要求时，比如百分比布局，固定宽高比，控件相同布局不同的页面等，使用ConstrantLayout可以比较方便的实现。</li>
+</ul>
+<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><ul>
+<li><a href="https://mp.weixin.qq.com/s/TKO2d4K0675I5aeTGIWD_A" target="_blank" rel="external">ConstraintLayout崛起之路</a></li>
+<li><a href="https://developer.android.com/reference/android/support/constraint/ConstraintLayout" target="_blank" rel="external">ConstraintLayout官方文档</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/11/kexuejia/" rel="next" title="阴阳师御魂挂机器">
+                <i class="fa fa-chevron-left"></i> 阴阳师御魂挂机器
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2018/05/17/ConstraintLayout/"
+           data-title="ConstraintLayout 更灵活的布局" data-url="http://yoursite.com/2018/05/17/ConstraintLayout/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xpp4m.com1.z0.glb.clouddn.com/20150722110848_zjBZ5.jpeg"
+               alt="ArcherYc" />
+          <p class="site-author-name" itemprop="name">ArcherYc</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#官方定义"><span class="nav-number">1.</span> <span class="nav-text">官方定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用建议"><span class="nav-number">2.</span> <span class="nav-text">使用建议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ArcherYc</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"archeryc"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
